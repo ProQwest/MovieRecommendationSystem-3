@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mapper.DBMapper;
 
 public class loginController implements Initializable {
 	public LoginModel lmodel = new LoginModel();
@@ -26,6 +27,18 @@ public class loginController implements Initializable {
 	
 	@FXML
 	private TextField txtpassword;
+	
+	@FXML
+	private TextField fname;
+	
+	@FXML
+	private TextField lname;
+	
+	@FXML
+	private TextField uname;
+	
+	@FXML
+	private TextField pass;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -44,15 +57,10 @@ public class loginController implements Initializable {
 				
 				Stage primaryStage = new Stage();
 				FXMLLoader loader = new FXMLLoader();
-				Pane root = loader.load(getClass().getResource("/application/User.fxml").openStream());
-				
-				UserController uc = (UserController)loader.getController();
-				uc.GetUser(txtusername.getText());
-				Scene scene = new Scene(root);
-				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-				primaryStage.setScene(scene);
-				primaryStage.show();
-				
+				Parent rootParent = FXMLLoader.load(getClass().getResource("/Preferences.fxml"));
+				Scene scene = new Scene(rootParent);
+				DBMapper.mapMovieRecommendationsFile();
+				Main.mainStage.setScene(scene);
 				
 			}
 			else {
@@ -64,6 +72,18 @@ public class loginController implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void signup(ActionEvent event) {
+	
+		
+		try {
+			lmodel.signup(fname.getText(), lname.getText(), uname.getText(), pass.getText());
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 }

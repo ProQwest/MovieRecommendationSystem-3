@@ -7,36 +7,61 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="496.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.loginController">
+<AnchorPane prefHeight="496.0" prefWidth="783.0" style="-fx-background-color: #76B75B;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.loginController">
    <children>
-      <Button layoutX="677.0" layoutY="55.0" mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="81.0" text="Login">
+      <Button layoutX="555.0" layoutY="109.0" mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="81.0" text="Login">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Label layoutX="7.0" layoutY="1.0" text="Login">
+      <Label layoutX="22.0" layoutY="21.0" text="Login" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="txtusername" layoutX="117.0" layoutY="58.0" promptText="User Name">
+      <TextField fx:id="txtusername" layoutX="21.0" layoutY="109.0" promptText="User Name">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Label layoutX="18.0" layoutY="61.0" text="User Name:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="356.0" layoutY="61.0" text="Password:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="isConnected" layoutX="55.0" layoutY="195.0" text="  " textFill="#d70b0b" />
-      <PasswordField fx:id="txtpassword" layoutX="445.0" layoutY="58.0" prefHeight="39.0" prefWidth="224.0" promptText="Password">
+      <Label fx:id="isConnected" layoutX="388.0" layoutY="291.0" text="  " textFill="#d70b0b" />
+      <PasswordField fx:id="txtpassword" layoutX="289.0" layoutY="108.0" prefHeight="39.0" prefWidth="224.0" promptText="Password">
          <font>
             <Font size="18.0" />
          </font>
       </PasswordField>
+      <Label layoutX="21.0" layoutY="176.0" text="Sign up" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fname" layoutX="21.0" layoutY="239.0" promptText="First name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="uname" layoutX="21.0" layoutY="344.0" promptText="User Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="lname" layoutX="21.0" layoutY="291.0" promptText="Last name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="pass" layoutX="21.0" layoutY="396.0" prefHeight="39.0" prefWidth="232.0" promptText="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <Button layoutX="279.0" layoutY="396.0" mnemonicParsing="false" onAction="#signup" prefHeight="39.0" prefWidth="113.0" text="Sign Up">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="22.0" layoutY="62.0" text="Movie recommendation system" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

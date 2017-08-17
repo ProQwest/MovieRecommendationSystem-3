@@ -24,7 +24,7 @@ public class LoginModel {
 	public boolean isLogin(String user, String pass) throws SQLException {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String query = "Select * from tbl_user where username = ? and password = ?";
+		String query = "Select * from user_table where username = ? and password = ?";
 		
 		try {
 			ps = con.prepareStatement(query);
@@ -44,4 +44,29 @@ public class LoginModel {
 			rs.close();
 		}
 	}
+	
+	
+	public void signup(String fname, String lname, String uname, String pass) throws SQLException {
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String query = "insert into user_table(username,password,firstname,lastname) values(" + "'" + uname + "','" + pass + "','" + fname + "','" + lname + "'"+")";
+		
+		
+		
+		
+		try {
+			ps = con.prepareStatement(query);
+			ps.executeUpdate();
+			
+			System.out.println(query);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ps.close();
+			rs.close();
+		}
+	}
+	
 }
